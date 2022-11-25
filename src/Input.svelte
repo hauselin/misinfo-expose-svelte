@@ -1,12 +1,26 @@
 <script>
-	let user = "andrewyang";
-	let userid = "2228878592";
+	let user = "";
+	let userid = "";
+	let istest = "test";
 	let currentUser = user;
 	let submittedValue = null;
-
 	let scores_obj = null;
+	let testuser = null;
+	let testusers = ["andrewyang", "benshapiro"];
+
+	const choose = (options) => {
+		var index = Math.floor(Math.random() * options.length);
+		return options[index];
+	};
 
 	async function getScores(user) {
+		console.log("istest:", istest);
+		if (user == "") {
+			return "nothing";
+		}
+		if (user.slice(0, 1) == "@") {
+			user = user.slice(1);
+		}
 		user = user.trim();
 		user = user.toLowerCase();
 
@@ -53,10 +67,23 @@
 </script>
 
 <main>
-	<p class="small">Enter your Twitter username/ID below to find out.</p>
+	<p class="small">
+		Enter your Twitter username/ID below to find out or click <strong
+			><a
+				href="#"
+				on:click|preventDefault={() => {
+					testuser = choose(testusers);
+					user = testuser;
+					istest = "test";
+					scores = getScores(testuser);
+				}}>here</a
+			></strong
+		> to test the app.
+	</p>
 
 	<form
 		on:submit|preventDefault={() => {
+			istest = "nottest";
 			currentUser = user;
 			submittedValue = user;
 			console.log("user entered:", user);
@@ -66,10 +93,10 @@
 		<input bind:value={user} />
 	</form>
 
-	{#await scores}
-		<p>Getting scores...</p>
-	{:then scores}
-		{#if scores.message}
+	{#await scores then scores}
+		{#if scores == "nothing"}
+			<p />
+		{:else if scores.message}
 			<p class="error">
 				User not found or user does not follow any elite accounts.
 			</p>
