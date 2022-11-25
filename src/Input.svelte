@@ -4,14 +4,7 @@
 	let currentUser = user;
 	let submittedValue = null;
 
-	let scores_obj = {
-		username: user,
-		userid: userid,
-		misinfo: 0,
-		party: 0,
-		follow_n: 0,
-		following: [],
-	};
+	let scores_obj = null;
 
 	async function getScores(user) {
 		user = user.trim();
