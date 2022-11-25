@@ -4,6 +4,15 @@
 	let currentUser = user;
 	let submittedValue = null;
 
+	let scores_obj = {
+		username: user,
+		userid: userid,
+		misinfo: 0,
+		party: 0,
+		follow_n: 0,
+		following: [],
+	};
+
 	async function getScores(user) {
 		user = user.trim();
 		user = user.toLowerCase();
@@ -16,7 +25,8 @@
 					"Content-Type": "application/octet-stream",
 					Accept: "application/json",
 					"x-rapidapi-host": "mescalc.p.rapidapi.com",
-					"x-rapidapi-key": "",
+					"x-rapidapi-key":
+						"",
 				},
 			}
 		);
@@ -30,9 +40,17 @@
 				console.log("Success!");
 				userid = response.twitter_user_id;
 				userid = userid.toString();
-				return response;
+				scores_obj = {
+					username: user,
+					userid: userid,
+					misinfo: response.misinfo_exposure_score_weighted_numtweets,
+					party: response.partisan_score,
+					follow_n: response.num_following,
+					following: response.following,
+				};
 			}
 			console.log("response", response);
+			console.log("scores_obj", scores_obj);
 			return response;
 		} else {
 			console.log("No response");
@@ -57,7 +75,7 @@
 	</form>
 
 	{#await scores}
-		<p>...waiting</p>
+		<p>Getting scores...</p>
 	{:then scores}
 		{#if scores.message}
 			<p class="error">
@@ -65,11 +83,8 @@
 			</p>
 		{:else}
 			<p>
-				{scores.twitter_screen_name} has a misinformation exposure score
-				of{" "}
-				{scores.misinfo_exposure_score_weighted_numtweets} and a partisanship
-				score of{" "}
-				{scores.partisan_score}.
+				{scores_obj.username} has a misinformation exposure score of
+				{scores_obj.misinfo} and a partisanship score of {scores_obj.party}.
 			</p>
 		{/if}
 	{/await}
