@@ -18,8 +18,7 @@
 					"Content-Type": "application/octet-stream",
 					Accept: "application/json",
 					"x-rapidapi-host": "mescalc.p.rapidapi.com",
-					"x-rapidapi-key":
-						"",
+					"x-rapidapi-key": "",
 				},
 			}
 		);
@@ -75,9 +74,8 @@
 				User not found or user does not follow any elite accounts.
 			</p>
 		{:else}
-			<p>
-				{scores_obj.username} has a misinformation exposure score of
-				{scores_obj.misinfo} and a partisanship score of {scores_obj.party}.
+			<p class="center">
+				Scores for {scores_obj.username} (ID: {scores_obj.userid})
 			</p>
 		{/if}
 	{/await}
@@ -112,5 +110,4 @@
 		padding: 8px;
 		width: 100%;
 	}
-
 </style>

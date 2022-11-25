@@ -30,7 +30,7 @@
 		>
 		to get the scores. Source code for this app is available
 		<a
-			href="https://github.com/hauselin/misinfo-expose/tree/main"
+			href="https://github.com/hauselin/misinfo-expose-svelte"
 			target="_blank">here</a
 		>.
 	</p>
