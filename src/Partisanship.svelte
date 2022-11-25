@@ -3,6 +3,7 @@
 
 <main>
 	<h3>Partisanship</h3>
+	<img src="./dem_repub_small_nobg.png" height="89" class="center" />
 	<div id="bar">
 		<div id="gradient" />
 		<span class="line" />
@@ -13,6 +14,14 @@
 	h3 {
 		text-align: center;
 	}
+
+	.center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1em;
+	}
+
 	#bar {
 		width: 100;
 		position: relative;
