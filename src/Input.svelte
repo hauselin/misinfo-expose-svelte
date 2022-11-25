@@ -1,10 +1,13 @@
 <script>
+	import { createEventDispatcher } from "svelte";
+
+	export let scores_obj;
+	console.log("scores_obj", scores_obj);
 	let user = "";
 	let userid = "";
 	let istest = "test";
 	let currentUser = user;
 	let submittedValue = null;
-	let scores_obj = null;
 	let testuser = null;
 	let testusers = ["andrewyang", "benshapiro"];
 
@@ -12,6 +15,8 @@
 		var index = Math.floor(Math.random() * options.length);
 		return options[index];
 	};
+
+	let dispatch = createEventDispatcher();
 
 	async function getScores(user) {
 		console.log("istest:", istest);
@@ -38,6 +43,11 @@
 		);
 
 		console.log("Waiting for response...");
+		scores_obj = {
+			username: user,
+			inputEntered: false,
+		};
+		dispatch("updateScoresObj", scores_obj);
 		const response = await resp.json();
 		if (response) {
 			if (response.message) {
@@ -53,7 +63,9 @@
 					party: response.partisan_score,
 					follow_n: response.num_following,
 					following: response.following,
+					inputEntered: true,
 				};
+				dispatch("updateScoresObj", scores_obj);
 			}
 			console.log("response", response);
 			console.log("scores_obj", scores_obj);
@@ -98,10 +110,10 @@
 			<p />
 		{:else if scores.message}
 			<p class="error">
-				User not found or user does not follow any elite accounts.
+				User {user} not found or does not follow any elite accounts.
 			</p>
 		{:else}
-			<p class="center">
+			<p class="center" on:click>
 				Scores for {scores_obj.username} (ID: {scores_obj.userid})
 			</p>
 		{/if}
