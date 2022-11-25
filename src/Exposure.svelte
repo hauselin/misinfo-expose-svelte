@@ -1,5 +1,5 @@
 <main>
-	<h3>Misinformation exposure</h3>
+	<h2>Misinformation exposure</h2>
 
 	<p class="center">
 		The <span class="bold">vertical line</span> is where you are in relation
@@ -8,7 +8,7 @@
 </main>
 
 <style>
-	h3 {
+	h2 {
 		text-align: center;
 	}
 	.bold {

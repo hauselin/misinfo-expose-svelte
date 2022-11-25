@@ -2,8 +2,13 @@
 </script>
 
 <main>
-	<h3>Partisanship</h3>
-	<img src="./dem_repub_small_nobg.png" height="89" class="center" />
+	<h2>Partisanship</h2>
+	<img
+		src="./dem_repub_small_nobg.png"
+		height="89"
+		class="center"
+		alt="democrat republican"
+	/>
 	<div id="bar">
 		<div id="gradient" />
 		<span class="line" />
@@ -11,7 +16,7 @@
 </main>
 
 <style>
-	h3 {
+	h2 {
 		text-align: center;
 	}
 

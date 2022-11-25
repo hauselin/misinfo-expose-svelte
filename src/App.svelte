@@ -26,7 +26,7 @@
     <Results {...scores_obj} />
     <Exposure />
     <Partisanship />
-    <Table />
+    <!-- <Table /> -->
   {/if}
 </main>
 
