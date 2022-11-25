@@ -1,8 +1,7 @@
 <script>
 	import { createEventDispatcher } from "svelte";
 
-	export let scores_obj;
-	console.log("scores_obj", scores_obj);
+	let scores_obj;
 	let user = "";
 	let userid = "";
 	let istest = "test";
@@ -17,6 +16,13 @@
 	};
 
 	let dispatch = createEventDispatcher();
+
+	const dispatchNothing = () => {
+		dispatch("updateScoresObj", {
+			username: user,
+			inputEntered: false,
+		});
+	};
 
 	async function getScores(user) {
 		console.log("istest:", istest);
@@ -43,15 +49,17 @@
 		);
 
 		console.log("Waiting for response...");
-		scores_obj = {
-			username: user,
-			inputEntered: false,
-		};
-		dispatch("updateScoresObj", scores_obj);
+		dispatchNothing();
 		const response = await resp.json();
 		if (response) {
 			if (response.message) {
 				console.log("Error: " + response.message);
+				scores_obj = {
+					username: user,
+					inputEntered: false,
+					message: "cannot find user",
+				};
+				return scores_obj;
 			} else {
 				console.log("Success!");
 				userid = response.twitter_user_id;
@@ -84,6 +92,7 @@
 			><a
 				href="#"
 				on:click|preventDefault={() => {
+					dispatchNothing();
 					testuser = choose(testusers);
 					user = testuser;
 					istest = "test";
@@ -95,6 +104,7 @@
 
 	<form
 		on:submit|preventDefault={() => {
+			dispatchNothing();
 			istest = "nottest";
 			currentUser = user;
 			submittedValue = user;
@@ -110,7 +120,7 @@
 			<p />
 		{:else if scores.message}
 			<p class="error">
-				User {user} not found or does not follow any elite accounts.
+				User {scores.username} not found or does not follow any elite accounts.
 			</p>
 		{:else}
 			<p class="center" on:click>

@@ -23,7 +23,7 @@
   <Info />
   <Input on:updateScoresObj={updateScores} />
   {#if scores_obj.inputEntered}
-    <Results />
+    <Results {...scores_obj} />
     <Exposure />
     <Partisanship />
     <Table />
