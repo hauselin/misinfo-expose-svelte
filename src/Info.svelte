@@ -57,6 +57,7 @@
 	h1 {
 		text-align: center;
 		font-family: rockwell;
+		line-height: 32px;
 	}
 
 	.bold {
