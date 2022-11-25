@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rollup/plugin-json": "^5.0.1",
     "svelte-simple-datatables": "^0.2.3",
     "svelte-vega": "^1.2.0"
   },
