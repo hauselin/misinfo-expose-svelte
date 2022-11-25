@@ -1,6 +1,6 @@
 <script>
-	let user = "dg_rand";
-	let userid = "605012771";
+	let user = "andrewyang";
+	let userid = "2228878592";
 	let currentUser = user;
 	let submittedValue = null;
 
@@ -113,9 +113,4 @@
 		width: 100%;
 	}
 
-	/* button {
-		border: 1px solid #63d2ff;
-		border-radius: 3px;
-		padding: 5px;
-	} */
 </style>
