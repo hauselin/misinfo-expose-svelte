@@ -3,41 +3,52 @@
 	export let party;
 	export let misinfo_mean;
 	export let partisan_mean;
+	let misinfo_percent, party_percent;
 
-	const percentDelta = (misinfo, party) => {
-		party += 1;
-		const misinfo_delta = misinfo - misinfo_mean;
-		const party_delta = party - partisan_mean;
-
-		let misinfo_percent = (misinfo_delta / misinfo_mean) * 100;
-		let party_percent = (party_delta / partisan_mean) * 100;
-
-		if (misinfo_percent >= 0) {
-			misinfo_percent =
-				misinfo_percent.toFixed(2) + "% higher than average";
+	const percentDelta = () => {
+		if (misinfo) {
+			const misinfo_delta = misinfo - misinfo_mean;
+			misinfo_percent = (misinfo_delta / misinfo_mean) * 100;
+			if (misinfo_percent >= 0) {
+				misinfo_percent =
+					misinfo_percent.toFixed(2) + "% higher than average";
+			} else {
+				misinfo_percent =
+					misinfo_percent.toFixed(2) + "% lower than average";
+			}
+			misinfo = misinfo.toFixed(3);
 		} else {
-			misinfo_percent =
-				misinfo_percent.toFixed(2) + "% lower than average";
+			misinfo_percent = "-";
+			misinfo = "-";
 		}
-
-		if (party_percent >= 0) {
-			party_percent = party_percent.toFixed(2) + "% higher than average";
+		if (party) {
+			party += 1;
+			const party_delta = party - partisan_mean;
+			party_percent = (party_delta / partisan_mean) * 100;
+			if (party_percent >= 0) {
+				party_percent =
+					party_percent.toFixed(2) + "% higher than average";
+			} else {
+				party_percent =
+					party_percent.toFixed(2) + "% lower than average";
+			}
+			party = party.toFixed(3);
 		} else {
-			party_percent = party_percent.toFixed(2) + "% lower than average";
+			party_percent = "-";
+			party = "-";
 		}
-		return [misinfo_percent, party_percent];
 	};
 
-	let [misinfo_percent, party_percent] = percentDelta(misinfo, party);
+	percentDelta(misinfo, party);
 </script>
 
 <main>
 	<div class="container">
 		<div class="small">Misinformation exposure</div>
-		<div class="bigger">{misinfo.toFixed(3)}</div>
+		<div class="bigger">{misinfo}</div>
 		<div class="smallgrey">{misinfo_percent}</div>
 		<div class="small">Partisanship</div>
-		<div class="bigger">{party.toFixed(3)}</div>
+		<div class="bigger">{party}</div>
 		<div class="smallgrey">{party_percent}</div>
 	</div>
 </main>

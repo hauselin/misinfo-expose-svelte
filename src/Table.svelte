@@ -3,6 +3,8 @@
     import InfiniteScroll from "svelte-infinite-scroll";
 
     export let following;
+    export let username;
+    export let follow_n;
 
     FalsityScores.forEach((obj, i) => {
         FalsityScores[i].elite_account = obj.elite_account.toLowerCase();
@@ -32,10 +34,12 @@
             FalsityScore: getFalsityScore(val),
         });
     });
-    // sort values # TODO not working yet
-    following.sort((a, b) => (a.FalsityScore > b.FalsityScore ? -1 : 1));
-
-    console.log(data);
+    // sort values
+    data = data.sort((a, b) => (a.FalsityScore > b.FalsityScore ? -1 : 1));
+    // reset i values in data
+    data.forEach((val, i) => {
+        data[i].i = i + 1;
+    });
 
     let page = 0;
     let size = 10000;
@@ -44,10 +48,18 @@
 </script>
 
 <main>
-    <p>
-        The estimates above are based on these 10 users <strong>dg_rand</strong>
-        follows. Falsity scores for the elites are also shown.
-    </p>
+    {#if follow_n > 1}
+        <p class="center-text">
+            The estimates above are based on these {follow_n} elites
+            <strong>{username}</strong>
+            follows.
+        </p>
+    {:else}
+        <p class="center-text">
+            The estimates above are based on this elite
+            <strong>{username}</strong>
+            follows.
+        </p>{/if}
     <div class="center">
         <table>
             <tr style="background-color:#94adc4">
@@ -69,9 +81,16 @@
 </main>
 
 <style>
+    strong {
+        color: #63d2ff;
+        font-weight: 600px;
+    }
     .center {
         margin-left: auto;
         margin-right: auto;
+    }
+    .center-text {
+        text-align: center;
     }
     div {
         width: 400px;

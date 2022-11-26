@@ -26,7 +26,11 @@
     <Results {...scores_obj} />
     <Exposure misinfo={scores_obj.misinfo} />
     <Partisanship party={scores_obj.party} />
-    <Table following={scores_obj.following} />
+    <Table
+      following={scores_obj.following}
+      username={scores_obj.username}
+      follow_n={scores_obj.follow_n}
+    />
   {/if}
 </main>
 
