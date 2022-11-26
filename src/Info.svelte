@@ -1,3 +1,7 @@
+<script>
+	import ShareButtons from "./ShareButtons.svelte";
+</script>
+
 <main>
 	<h1>
 		<strong
@@ -5,6 +9,8 @@
 			exposed to?</strong
 		>
 	</h1>
+
+	<ShareButtons />
 
 	<p>
 		<span class="bold">Misinformation exposure</span> scores measure how
