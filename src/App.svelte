@@ -5,6 +5,7 @@
   import Exposure from "./Exposure.svelte";
   import Partisanship from "./Partisanship.svelte";
   import Table from "./Table.svelte";
+  import ShareButtons from "./ShareButtons.svelte";
 
   let scores_obj = { inputEntered: false };
   const misinfo_mean = 0.51;
@@ -32,6 +33,7 @@
       follow_n={scores_obj.follow_n}
     />
   {/if}
+  <ShareButtons />
 </main>
 
 <style>
