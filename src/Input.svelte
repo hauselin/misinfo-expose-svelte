@@ -204,7 +204,7 @@
 	}
 	@media (max-width: 500px) {
 		input {
-			width: 85%;
+			width: 89%;
 		}
 	}
 </style>
