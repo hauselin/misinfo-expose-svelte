@@ -5,6 +5,7 @@
   import Exposure from "./Exposure.svelte";
   import Partisanship from "./Partisanship.svelte";
   import Table from "./Table.svelte";
+  import Scroll from "./Scroll.svelte";
 
   let scores_obj = { inputEntered: false };
   const misinfo_mean = 0.51;
