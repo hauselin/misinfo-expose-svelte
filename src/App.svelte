@@ -19,20 +19,14 @@
   };
 </script>
 
-<!-- <svelte:head>
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</svelte:head> -->
-
 <main class="container">
   <Info />
   <Input on:updateScoresObj={updateScores} />
   {#if scores_obj.inputEntered}
     <Results {...scores_obj} />
     <Exposure misinfo={scores_obj.misinfo} />
-    <!-- <Partisanship party={scores_obj.party} /> -->
-    <Table />
+    <Partisanship party={scores_obj.party} />
+    <!-- <Table /> -->
   {/if}
 </main>
 

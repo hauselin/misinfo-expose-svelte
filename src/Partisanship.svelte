@@ -15,7 +15,6 @@
 	<div class="container">
 		<div id="bar">
 			<div id="gradient" />
-			<!-- <span class="line" /> -->
 			<span style={linestyle} />
 		</div>
 	</div>
@@ -27,19 +26,20 @@
 	}
 
 	.container {
-		padding-left: 377px;
-		padding-right: 377px;
+		padding-left: 13%;
+		padding-right: 13%;
 	}
 
-	@media (max-width: 400) {
+	@media (max-width: 800px) {
 		.container {
-			padding-left: 10;
-			padding-right: 10;
+			padding-left: 8%;
+			padding-right: 8%;
 		}
 		#bar {
 			width: 100;
 			position: relative;
 			display: block;
+			padding: 0px;
 		}
 	}
 
