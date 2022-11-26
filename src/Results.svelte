@@ -34,10 +34,10 @@
 <main>
 	<div class="container">
 		<div class="small">Misinformation exposure</div>
-		<div class="bigger">{misinfo}</div>
+		<div class="bigger">{misinfo.toFixed(3)}</div>
 		<div class="smallgrey">{misinfo_percent}</div>
 		<div class="small">Partisanship</div>
-		<div class="bigger">{party}</div>
+		<div class="bigger">{party.toFixed(3)}</div>
 		<div class="smallgrey">{party_percent}</div>
 	</div>
 </main>
