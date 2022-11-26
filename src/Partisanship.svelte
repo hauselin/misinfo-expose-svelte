@@ -37,6 +37,15 @@
 		padding-right: 13%;
 	}
 
+	@media (max-width: 800px) {
+		.label-container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			padding-left: 5%;
+			padding-right: 5%;
+		}
+	}
+
 	.label-left {
 		text-align: left;
 		font-size: 0.7em;
