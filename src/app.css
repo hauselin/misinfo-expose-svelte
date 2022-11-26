@@ -28,11 +28,14 @@ strong {
 }
 
 body {
-  margin: 34px;
+  margin-top: 34px;
+  margin-bottom: 34px;
+  margin-left: 13px;
+  margin-right: 13px;
   display: flex;
-  /* place-items: center; */
-  min-width: 320px;
-  min-height: 100vh;
+  place-items: center;
+  /* min-width: 320px; */
+  /* min-height: 100vh; */
 }
 
 .card {
@@ -40,9 +43,8 @@ body {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0px;
+  padding: 0px;
   text-align: left;
 }
 
@@ -64,16 +66,4 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-/* 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
+

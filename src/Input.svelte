@@ -142,7 +142,7 @@
 		border-top: 0px;
 		border-radius: 3px;
 		padding: 8px;
-		width: 100%;
+		width: 95%;
 	}
 	.center {
 		text-align: center;
@@ -157,6 +157,6 @@
 		border-top: 0px;
 		border-radius: 3px;
 		padding: 8px;
-		width: 100%;
+		width: 95%;
 	}
 </style>

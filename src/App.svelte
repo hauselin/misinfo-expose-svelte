@@ -25,16 +25,32 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </svelte:head> -->
 
-<main>
+<main class="container">
   <Info />
   <Input on:updateScoresObj={updateScores} />
   {#if scores_obj.inputEntered}
     <Results {...scores_obj} />
     <Exposure misinfo={scores_obj.misinfo} />
     <!-- <Partisanship party={scores_obj.party} /> -->
-    <!-- <Table /> -->
+    <Table />
   {/if}
 </main>
 
 <style>
+  .container {
+    margin: 50px 200px 50px 200px;
+  }
+
+  @media (max-width: 1000px) {
+    .container {
+      margin: 50px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .container {
+      margin: 50px 1px 50px 1px;
+      padding: 0px;
+    }
+  }
 </style>
