@@ -4,7 +4,6 @@
 		data-a2a-url="https://misinfoexpose.com/"
 		data-a2a-title="How much misinformation are you exposed to? Try this app to find out!"
 	>
-		<p>buttons</p>
 		<a class="a2a_button_twitter" />
 		<a class="a2a_button_facebook" />
 		<a class="a2a_button_linkedin" />
