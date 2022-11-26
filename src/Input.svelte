@@ -76,7 +76,7 @@
 					inputEntered: true,
 				};
 				dispatch("updateScoresObj", scores_obj);
-				// let post_outcome = saveSearch();
+				let post_outcome = saveSearch();
 			}
 			console.log("response", response);
 			console.log("scores_obj", scores_obj);
