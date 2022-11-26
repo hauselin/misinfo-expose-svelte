@@ -9,6 +9,7 @@
 	let submittedValue = null;
 	let testuser = null;
 	let testusers = ["andrewyang", "benshapiro"];
+	let userurl = "https://twitter.com/";
 
 	const saveSearchURL = import.meta.env.VITE_APIURL;
 
@@ -75,6 +76,7 @@
 					following: response.following,
 					inputEntered: true,
 				};
+				userurl += user;
 				dispatch("updateScoresObj", scores_obj);
 				let post_outcome = saveSearch();
 			}
@@ -160,7 +162,12 @@
 			</p>
 		{:else}
 			<p class="center" on:click>
-				Scores for {scores_obj.username} (ID: {scores_obj.userid})
+				Scores for <a
+					href={userurl}
+					target="_blank"
+					style="color: #63d2ff">{scores_obj.username}</a
+				>
+				(ID: {scores_obj.userid})
 			</p>
 		{/if}
 	{/await}
