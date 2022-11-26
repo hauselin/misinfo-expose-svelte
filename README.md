@@ -1,6 +1,6 @@
 # misinformation exposure 
 
-This app is a tool to help you understand how much misinformation you are exposed to on Twitter. It is hosted at [misinfoexposure.com](https://misinfoexposure.com/).
+This app is a tool to help you understand how much misinformation you are exposed to on Twitter. It is hosted at [misinfoexpose.com](https://misinfoexpose.com/).
 
 To use the API, visit https://github.com/mmosleh/minfo-exposure.
 
