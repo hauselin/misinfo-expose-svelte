@@ -19,7 +19,7 @@ export default {
 		"data": { "values": [{ "value": 0.5 }] },
 		"encoding": {
 			"x": { "field": "value", "title": "", "type": "quantitative", "axis": { "domain": false, "grid": false, "ticks": false, "labelColor": "white", } },
-			"size": { "value": 3 }
+			"size": { "value": 4 }
 		}
 	}],
 	"width": 300,
