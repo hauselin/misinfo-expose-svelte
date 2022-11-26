@@ -1,8 +1,12 @@
 <script>
     import { data } from './data.example.js'  
     import { Datatable } from 'svelte-simple-datatables'
+    const settings = {sortable: true, pagination: true, columnFilter: false, css: true, rowsPerPage: 10, blocks: {
+            searchInput: false, 
+            paginationButtons: true,
+            paginationRowCount: true,
+        }}
 
-    const settings = { columnFilter: true }
     let rows
 </script>
 
@@ -15,6 +19,7 @@
 
 </main>
 
+<div style="width:60%; margin:0 auto; height:400px">
 <Datatable settings={settings} data={data} bind:dataRows={rows}>
     <thead>
         <th data-key="first_name">First Name</th>
@@ -33,7 +38,11 @@
     {/if}
     </tbody>
 </Datatable>
+</div>
 
 <style>
-	td{text-align:center;padding:4px 0; color:#000000; background-color:#979BCA;}
+	thead{text-align:center; color:#000000; background-color:#979BCA;width:50%;}
+tbody{text-align:center; color:#000000; background-color:#979BCA;width:50%;}
+
+	td{text-align:left;padding:4px 0; color:#000000; background-color:#979BCA; width:50%}
 </style>
