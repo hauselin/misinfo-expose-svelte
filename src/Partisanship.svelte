@@ -1,7 +1,6 @@
 <script>
+	import Bar from "./Bar.svelte";
 	export let party;
-	party = ((party + 1) / 2) * 100;
-	let linestyle = "top:-25%; left: " + party + "%";
 </script>
 
 <main>
@@ -12,35 +11,16 @@
 		class="center"
 		alt="democrat republican"
 	/>
-	<div class="container">
-		<div id="bar">
-			<div id="gradient" />
-			<span style={linestyle} />
-		</div>
+	<Bar {party} />
+	<div class="label-container">
+		<span class="label-left">-1.0 (Democrat)</span>
+		<span class="label-right">1.0 (Republican)</span>
 	</div>
 </main>
 
 <style>
 	h2 {
 		text-align: center;
-	}
-
-	.container {
-		padding-left: 13%;
-		padding-right: 13%;
-	}
-
-	@media (max-width: 800px) {
-		.container {
-			padding-left: 8%;
-			padding-right: 8%;
-		}
-		#bar {
-			width: 100;
-			position: relative;
-			display: block;
-			padding: 0px;
-		}
 	}
 
 	.center {
@@ -50,27 +30,29 @@
 		margin-bottom: 1em;
 	}
 
-	#bar {
-		width: 100;
-		position: relative;
-		display: block;
+	.label-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding-left: 13%;
+		padding-right: 13%;
 	}
 
-	span {
-		position: absolute;
-		display: block;
-		height: 34px;
-		width: 5px;
-		background: #63d2ff;
+	.label-left {
+		text-align: left;
+		font-size: 0.7em;
+		margin: 0px;
+		padding: 0px;
+		border: 0px;
+		margin-block-start: 0px;
+		margin-block-end: 0px;
 	}
-
-	#gradient {
-		height: 21px;
-		background: linear-gradient(
-			90deg,
-			#36479d 0%,
-			rgb(255, 255, 255) 50%,
-			#bf1e2e 100%
-		);
+	.label-right {
+		text-align: right;
+		font-size: 0.7em;
+		margin: 0px;
+		padding: 0px;
+		border: 0px;
+		margin-block-start: 0px;
+		margin-block-end: 0px;
 	}
 </style>
