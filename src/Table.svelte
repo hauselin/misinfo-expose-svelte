@@ -5,6 +5,7 @@
     export let following;
     export let username;
     export let follow_n;
+    const userurl = "https://www.twitter.com/" + username;
 
     FalsityScores.forEach((obj, i) => {
         FalsityScores[i].elite_account = obj.elite_account.toLowerCase();
@@ -51,13 +52,21 @@
     {#if follow_n > 1}
         <p class="center-text">
             The estimates above are based on these {follow_n} elites
-            <strong>{username}</strong>
+            <strong
+                ><a href={userurl} target="_blank" style="color: #63d2ff"
+                    >{username}</a
+                ></strong
+            >
             follows.
         </p>
     {:else}
         <p class="center-text">
             The estimates above are based on this elite
-            <strong>{username}</strong>
+            <strong
+                ><a href={userurl} target="_blank" style="color: #63d2ff"
+                    >{username}</a
+                ></strong
+            >
             follows.
         </p>{/if}
     <div class="center">
