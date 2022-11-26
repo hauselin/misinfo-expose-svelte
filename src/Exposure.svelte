@@ -4,8 +4,11 @@
 	import exposureDensitySpec from "./vega-specs/exposure_density.js";
 
 	export let misinfo;
+	const axis_labels =
+		"datum.label == 0 ? ['0.0','Low']: datum.label == 1.0 ? ['1.0','High']: datum.label";
 
 	onMount(() => {
+		exposureDensitySpec.layer[0].encoding.x.axis.labelExpr = axis_labels;
 		// update vertical rule to user value
 		if (window.innerWidth > 600) {
 			exposureDensitySpec.width = 500;
@@ -29,7 +32,9 @@
 		to others.
 	</p>
 
-	<div class="container"><div id="density" /></div>
+	<div class="container-density">
+		<span id="density" />
+	</div>
 </main>
 
 <style>
@@ -40,7 +45,7 @@
 		font-weight: 987;
 		color: #63d2ff;
 	}
-	.container {
+	.container-density {
 		display: flex;
 		justify-content: center;
 		align-items: center;
