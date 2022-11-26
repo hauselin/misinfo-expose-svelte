@@ -200,7 +200,7 @@
 		border-top: 0px;
 		border-radius: 3px;
 		padding: 8px;
-		width: 95%;
+		width: 98%;
 	}
 	@media (max-width: 500px) {
 		input {
