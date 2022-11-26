@@ -13,7 +13,11 @@
         const obj = FalsityScores.filter(
             (obj) => obj.elite_account === elite_account.toLowerCase()
         );
-        return Number(obj[0].falsity_score).toFixed(3);
+        let score = NaN;
+        if (obj.length > 0) {
+            score = Number(obj[0].falsity_score).toFixed(3);
+        }
+        return score;
     };
 
     let data = [];
@@ -58,7 +62,7 @@
 <div class="container-table">
     <Datatable {settings} {data} bind:dataRows={rows}>
         <thead>
-            <!-- <th data-key="i" /> -->
+            <th data-key="i" />
             <th data-key="Elite">Elite</th>
             <th data-key="Falsity-score">Falsity score</th>
         </thead>
@@ -66,7 +70,7 @@
             {#if rows}
                 {#each $rows as row}
                     <tr>
-                        <!-- <td>{row.i}</td> -->
+                        <td>{row.i}</td>
                         <td>{@html row.Elite}</td>
                         <td>{row.FalsityScore}</td>
                     </tr>
@@ -79,14 +83,13 @@
 <style>
     .container-table {
         width: 60%;
-        margin: 0, auto;
-        height: 400px;
+
+        height: 300px;
 		margin-left: auto;
 		margin-right: auto;
     }
 
-	tr{text-align:center; color:#ffffff; background-color:#305c8c;}
-	th{text-align:center; color:#ffffff; background-color:#305c8c;}
+
 
 
     thead {
