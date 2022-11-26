@@ -15,7 +15,7 @@
 			exposureDensitySpec.height = 300;
 		} else {
 			exposureDensitySpec.width = 233;
-			exposureDensitySpec.height = 144;
+			exposureDensitySpec.height = 100;
 		}
 		exposureDensitySpec.layer[1].data.values[0].value = misinfo;
 		embed("#density", exposureDensitySpec, { actions: false }).catch(

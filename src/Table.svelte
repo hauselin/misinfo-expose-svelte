@@ -93,7 +93,6 @@
         text-align: center;
     }
     div {
-        width: 400px;
         max-height: 377px;
         max-width: 320px;
         overflow-x: hidden;
@@ -102,8 +101,8 @@
         border: 1px solid #94adc4;
         border-collapse: collapse;
         width: 100%;
-        font-size: 12px;
-        line-height: 0.5rem;
+        font-size: 13px;
+        line-height: 0.6rem;
     }
     td,
     th {
@@ -112,9 +111,5 @@
     }
     tr:nth-child(even) {
         background-color: #123658;
-    }
-    .scrollbar-thin {
-        scrollbar-width: thin;
-        overflow-y: scroll;
     }
 </style>

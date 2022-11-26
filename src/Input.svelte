@@ -185,7 +185,7 @@
 		border-top: 0px;
 		border-radius: 3px;
 		padding: 8px;
-		width: 95%;
+		width: 90%;
 	}
 	.center {
 		text-align: center;
@@ -201,5 +201,10 @@
 		border-radius: 3px;
 		padding: 8px;
 		width: 95%;
+	}
+	@media (max-width: 500px) {
+		input {
+			width: 85%;
+		}
 	}
 </style>
