@@ -10,6 +10,8 @@
 	let testuser = null;
 	let testusers = ["andrewyang", "benshapiro"];
 
+	const saveSearchURL = import.meta.env.VITE_APIURL;
+
 	const choose = (options) => {
 		var index = Math.floor(Math.random() * options.length);
 		return options[index];
@@ -74,6 +76,7 @@
 					inputEntered: true,
 				};
 				dispatch("updateScoresObj", scores_obj);
+				// let post_outcome = saveSearch();
 			}
 			console.log("response", response);
 			console.log("scores_obj", scores_obj);
@@ -84,6 +87,39 @@
 		}
 	}
 	let scores = getScores(user);
+
+	async function saveSearch() {
+		let time = "t-" + Date.now().toString();
+		const resp = await fetch(saveSearchURL, {
+			method: "POST",
+			mode: "cors",
+			cache: "default",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+			body: JSON.stringify({
+				user_id: "misinfoexpose-app",
+				condition: istest,
+				experiment_id: time,
+				form_fields: {
+					username: scores_obj.username,
+					userid: scores_obj.userid,
+					istest: istest,
+					timestamp: time,
+				},
+			}),
+		});
+
+		console.log("Posting data...");
+		const response = await resp.json();
+		if (response.success === "true") {
+			console.log("Submitted form data successfully");
+		} else {
+			console.log("Fail to write/post form data");
+		}
+		return response;
+	}
 </script>
 
 <main>

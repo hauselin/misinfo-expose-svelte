@@ -35,6 +35,7 @@
 		grid-template-columns: 1fr 1fr;
 		padding-left: 13%;
 		padding-right: 13%;
+		margin-top: 8px;
 	}
 
 	@media (max-width: 800px) {
@@ -43,6 +44,7 @@
 			grid-template-columns: 1fr 1fr;
 			padding-left: 5%;
 			padding-right: 5%;
+			margin-top: 8px;
 		}
 	}
 
