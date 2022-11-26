@@ -87,6 +87,13 @@
         margin-right: auto;
     }
 
+td:first-child {
+  border-left: none;
+  width: 8em;
+  min-width: 8em;
+  max-width: 8em;
+}
+
     thead {
         text-align: left;
         color: white;
@@ -131,7 +138,7 @@
         margin: 0;
         height: 24px;
         background: #455a64;
-        width: 176px;
+        width: 60%;
         transition: all, 0.1s;
     }
     .datatable .dt-search input:focus {
