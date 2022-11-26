@@ -43,7 +43,7 @@
 					"Content-Type": "application/octet-stream",
 					Accept: "application/json",
 					"x-rapidapi-host": "mescalc.p.rapidapi.com",
-					"x-rapidapi-key": "",
+					"x-rapidapi-key": import.meta.env.VITE_KEY,
 				},
 			}
 		);
