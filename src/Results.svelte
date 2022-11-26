@@ -32,6 +32,7 @@
 				party_percent =
 					party_percent.toFixed(2) + "% lower than average";
 			}
+			party -= 1;
 			party = party.toFixed(3);
 		} else {
 			party_percent = "-";
