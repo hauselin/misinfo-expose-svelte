@@ -31,7 +31,7 @@
   {#if scores_obj.inputEntered}
     <Results {...scores_obj} />
     <Exposure misinfo={scores_obj.misinfo} />
-    <Partisanship />
+    <!-- <Partisanship party={scores_obj.party} /> -->
     <!-- <Table /> -->
   {/if}
 </main>

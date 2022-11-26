@@ -1,4 +1,7 @@
 <script>
+	export let party;
+	party = ((party + 1) / 2) * 100;
+	let linestyle = "top:-25%; left: " + party + "%";
 </script>
 
 <main>
@@ -9,15 +12,35 @@
 		class="center"
 		alt="democrat republican"
 	/>
-	<div id="bar">
-		<div id="gradient" />
-		<span class="line" />
+	<div class="container">
+		<div id="bar">
+			<div id="gradient" />
+			<!-- <span class="line" /> -->
+			<span style={linestyle} />
+		</div>
 	</div>
 </main>
 
 <style>
 	h2 {
 		text-align: center;
+	}
+
+	.container {
+		padding-left: 377px;
+		padding-right: 377px;
+	}
+
+	@media (max-width: 400) {
+		.container {
+			padding-left: 10;
+			padding-right: 10;
+		}
+		#bar {
+			width: 100;
+			position: relative;
+			display: block;
+		}
 	}
 
 	.center {
@@ -39,11 +62,6 @@
 		height: 34px;
 		width: 5px;
 		background: #63d2ff;
-	}
-
-	.line {
-		left: 5.5%;
-		top: -21%;
 	}
 
 	#gradient {

@@ -1,17 +1,18 @@
 <script>
 	import { onMount } from "svelte";
 	import { default as embed } from "vega-embed";
-	import simpleChartSpec from "./vega-specs/vega-simple-chart.js";
 	import exposureDensitySpec from "./vega-specs/exposure_density.js";
 
 	export let misinfo;
 
 	onMount(() => {
 		// update vertical rule to user value
-		if (window.innerWidth > 500) {
+		if (window.innerWidth > 600) {
 			exposureDensitySpec.width = 500;
+			exposureDensitySpec.height = 300;
 		} else {
-			exposureDensitySpec.width = 300;
+			exposureDensitySpec.width = 233;
+			exposureDensitySpec.height = 144;
 		}
 		exposureDensitySpec.layer[1].data.values[0].value = misinfo;
 		embed("#density", exposureDensitySpec, { actions: false }).catch(
