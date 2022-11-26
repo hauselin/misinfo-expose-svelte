@@ -8,7 +8,7 @@
 	let currentUser = user;
 	let submittedValue = null;
 	let testuser = null;
-	let testusers = ["andrewyang", "benshapiro"];
+	let testusers = ["andrewyang", "benshapiro", "aoc", "sentedcruz"];
 	let userurl = "https://twitter.com/";
 
 	const saveSearchURL = import.meta.env.VITE_APIURL;
