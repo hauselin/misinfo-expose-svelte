@@ -4,7 +4,16 @@
 	import simpleChartSpec from "./vega-specs/vega-simple-chart.js";
 	import exposureDensitySpec from "./vega-specs/exposure_density.js";
 
+	export let misinfo;
+
 	onMount(() => {
+		// update vertical rule to user value
+		if (window.innerWidth > 500) {
+			exposureDensitySpec.width = 500;
+		} else {
+			exposureDensitySpec.width = 300;
+		}
+		exposureDensitySpec.layer[1].data.values[0].value = misinfo;
 		embed("#density", exposureDensitySpec, { actions: false }).catch(
 			(error) => console.log(error)
 		);

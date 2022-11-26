@@ -30,7 +30,7 @@
   <Input on:updateScoresObj={updateScores} />
   {#if scores_obj.inputEntered}
     <Results {...scores_obj} />
-    <Exposure />
+    <Exposure misinfo={scores_obj.misinfo} />
     <Partisanship />
     <!-- <Table /> -->
   {/if}
