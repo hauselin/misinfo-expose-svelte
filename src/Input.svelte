@@ -47,6 +47,7 @@
 					Accept: "application/json",
 					"x-rapidapi-host": "mescalc.p.rapidapi.com",
 					"x-rapidapi-key": import.meta.env.VITE_KEY,
+					// "x-rapidapi-key": import.meta.env.KEY,
 				},
 			}
 		);
@@ -185,7 +186,7 @@
 		border-top: 0px;
 		border-radius: 3px;
 		padding: 8px;
-		width: 90%;
+		width: 98%;
 	}
 	.center {
 		text-align: center;
@@ -204,6 +205,9 @@
 	}
 	@media (max-width: 500px) {
 		input {
+			width: 89%;
+		}
+		.error {
 			width: 89%;
 		}
 	}
