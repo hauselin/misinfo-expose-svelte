@@ -17,23 +17,7 @@
     scores_obj["misinfo_mean"] = misinfo_mean;
     scores_obj["partisan_mean"] = partisan_mean;
   };
-
-  const gatag =
-    "https://www.googletagmanager.com/gtag/js?id=" + import.meta.env.VITE_GAID;
 </script>
-
-<svelte:head>
-  <!-- Google tag (gtag.js) -->
-  <script async src={gatag}></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", { import.meta.env.VITE_GAID });
-  </script>
-</svelte:head>
 
 <main class="container">
   <Info />
