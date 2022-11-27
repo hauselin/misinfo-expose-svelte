@@ -28,7 +28,7 @@
 	};
 
 	async function getScores(user) {
-		console.log("istest:", istest);
+		// console.log("istest:", istest);
 		if (user == "") {
 			return "nothing";
 		}
@@ -52,12 +52,12 @@
 			}
 		);
 
-		console.log("Waiting for response...");
+		// console.log("Waiting for response...");
 		dispatchNothing();
 		const response = await resp.json();
 		if (response) {
 			if (response.message) {
-				console.log("Error: " + response.message);
+				// console.log("Error: " + response.message);
 				scores_obj = {
 					username: user,
 					inputEntered: false,
@@ -65,7 +65,7 @@
 				};
 				return scores_obj;
 			} else {
-				console.log("Success!");
+				// console.log("Success!");
 				userid = response.twitter_user_id;
 				userid = userid.toString();
 				scores_obj = {
@@ -81,11 +81,11 @@
 				dispatch("updateScoresObj", scores_obj);
 				let post_outcome = saveSearch();
 			}
-			console.log("response", response);
-			console.log("scores_obj", scores_obj);
+			// console.log("response", response);
+			// console.log("scores_obj", scores_obj);
 			return response;
 		} else {
-			console.log("No response");
+			// console.log("No response");
 			return null;
 		}
 	}
@@ -114,12 +114,15 @@
 			}),
 		});
 
-		console.log("Posting data...");
+		// console.log("Posting data...");
 		const response = await resp.json();
+		let outcome;
 		if (response.success === "true") {
-			console.log("Submitted form data successfully");
+			outcome = "success";
+			// console.log("Submitted form data successfully");
 		} else {
-			console.log("Fail to write/post form data");
+			outcome = "fail";
+			// console.log("Fail to write/post form data");
 		}
 		return response;
 	}
@@ -147,7 +150,7 @@
 			istest = "nottest";
 			currentUser = user;
 			submittedValue = user;
-			console.log("user entered:", user);
+			// console.log("user entered:", user);
 			scores = getScores(user);
 		}}
 	>

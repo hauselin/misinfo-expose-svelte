@@ -12,7 +12,7 @@
   // const follower_mean = 4.65;
 
   const updateScores = (e) => {
-    console.log(e.detail);
+    // console.log(e.detail);
     scores_obj = e.detail;
     scores_obj["misinfo_mean"] = misinfo_mean;
     scores_obj["partisan_mean"] = partisan_mean;
