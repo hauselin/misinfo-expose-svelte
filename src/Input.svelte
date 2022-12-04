@@ -102,9 +102,9 @@
 				Accept: "application/json",
 			},
 			body: JSON.stringify({
-				user_id: "misinfoexpose-app",
+				user_id: time,
 				condition: istest,
-				experiment_id: time,
+				experiment_id: "misinfoexpose-app",
 				form_fields: {
 					username: scores_obj.username,
 					userid: scores_obj.userid,
