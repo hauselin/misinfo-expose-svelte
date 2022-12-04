@@ -85,7 +85,7 @@
 			// console.log("scores_obj", scores_obj);
 			return response;
 		} else {
-			// console.log("No response");
+			console.log("Fail to retrieve data");
 			return null;
 		}
 	}
@@ -122,7 +122,7 @@
 			// console.log("Submitted form data successfully");
 		} else {
 			outcome = "fail";
-			// console.log("Fail to write/post form data");
+			console.log("Fail to write/post form data");
 		}
 		return response;
 	}
