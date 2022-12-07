@@ -141,7 +141,7 @@
 					scores = getScores(testuser);
 				}}>here</a
 			></strong
-		> to test the app.
+		> to try the app.
 	</p>
 
 	<form
