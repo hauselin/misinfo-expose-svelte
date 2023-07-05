@@ -10,7 +10,6 @@
   const misinfo_mean = 0.51;
   const partisan_mean = -0.352 + 1; // rescale to [0, 1], original was [-1, 1]
   // const follower_mean = 4.65;
-
   const updateScores = (e) => {
     // console.log(e.detail);
     scores_obj = e.detail;
